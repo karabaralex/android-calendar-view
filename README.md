@@ -1,6 +1,6 @@
 # Calendar widget and dialog for android
 
-![Screenshot](https://github.com/chrisbanes/Android-PullToRefresh/raw/master/header_graphic.png)
+![Screenshot](https://github.com/karabaralex/android-calendar-view/raw/master/screenshot.png)
 
 ## Features
 
