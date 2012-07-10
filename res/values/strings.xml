@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">CalendarView</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+</resources>

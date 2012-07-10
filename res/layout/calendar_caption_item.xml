@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/calendar_transparent"
+    android:orientation="vertical" >
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/calendar_caption_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/calendar_header_font_color"
+        android:textSize="14sp"
+        android:typeface="monospace" 
+        android:gravity="center"
+        android:textStyle="bold" >
+    </TextView>
+</LinearLayout>
