@@ -8,6 +8,7 @@
  * Month sliding like in home screen!
  * Available as widget or as dialog
  * Library project
+ * Auto managing week start day
 
 ## Suggestions
 

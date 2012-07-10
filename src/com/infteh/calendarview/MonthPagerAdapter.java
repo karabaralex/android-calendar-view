@@ -153,7 +153,6 @@ public class MonthPagerAdapter extends PagerAdapter {
 
 	@Override
 	public void destroyItem(View collection, int position, Object view) {
-		// ((ViewPager) collection).removeView((View) view);
 	}
 
 	@Override

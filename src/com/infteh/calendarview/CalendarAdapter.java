@@ -45,7 +45,6 @@ public class CalendarAdapter extends BaseAdapter {
 		mCurrentMonth = (Calendar) monthCalendar.clone();
 		mContext = context;
 		mCurrentMonth.set(Calendar.DAY_OF_MONTH, 1);
-		// this.items = new ArrayList<String>();
 		refreshDays();
 	}
 
@@ -68,13 +67,11 @@ public class CalendarAdapter extends BaseAdapter {
 		return 0;
 	}
 
-	// create a new view for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View currentView = convertView;
 		TextView dayViewTextView;
 		DayCell dayCell = days[position];
-		if (convertView == null) { // if it's not recycled, initialize some
-									// attributes
+		if (convertView == null) { 
 			LayoutInflater vi = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			currentView = vi.inflate(R.layout.calendar_item, null);
 		}
@@ -97,14 +94,11 @@ public class CalendarAdapter extends BaseAdapter {
 		if (mToday.equals(dayCell.mDate)) {
 			currentView.setBackgroundResource(R.drawable.calendar_item_background_today);
 		} else {
-			// currentView.setBackgroundResource(R.drawable.list_item_background);
-
 			if (isCurrentMonth) {
 				currentView.setBackgroundResource(R.drawable.list_item_background);
 			} else {
 				currentView.setBackgroundResource(R.drawable.calendar_notcurrentmonth_item_selector);
 			}
-
 		}
 		dayViewTextView.setText(dayCell.getDescr());
 
@@ -127,9 +121,6 @@ public class CalendarAdapter extends BaseAdapter {
 	 * refresh.
 	 */
 	public final void refreshDays() {
-		// clear items
-		// items.clear();
-
 		Calendar currentDate = DateHelper.fromDateToCalendar(DateHelper.clearTime(((Calendar) mCurrentMonth.clone()).getTime()));
 		currentDate.set(Calendar.DAY_OF_MONTH, 1);
 
@@ -146,13 +137,9 @@ public class CalendarAdapter extends BaseAdapter {
 		}
 		currentDate.add(Calendar.DATE, -dayShift);
 		days = new DayCell[42];
-		// populate days
-		// int dayNumber = 1;
-
 		for (int i = 0; i < days.length; i++) {
 			days[i] = new DayCell(currentDate, "" + currentDate.get(Calendar.DAY_OF_MONTH));
 			DateHelper.increment(currentDate);
-			// dayNumber++;
 		}
 	}
 
@@ -191,6 +178,11 @@ public class CalendarAdapter extends BaseAdapter {
 		 */
 		public final Calendar getDate() {
 			return mDate;
+		}
+
+		@Override
+		public final int hashCode() {
+			return super.hashCode();
 		}
 
 		@Override

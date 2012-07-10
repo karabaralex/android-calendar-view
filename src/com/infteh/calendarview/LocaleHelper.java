@@ -3,7 +3,7 @@ package com.infteh.calendarview;
 import android.content.Context;
 
 /**
- * помошник при работе с локализациями.
+ * locale helper.
  * @author Sazonov-adm
  *
  */
