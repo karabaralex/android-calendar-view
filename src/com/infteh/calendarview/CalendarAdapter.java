@@ -37,15 +37,27 @@ public class CalendarAdapter extends BaseAdapter {
 	private Calendar mToday;
 
 	/**
+	 * day that was picked.
+	 */
+	private Calendar mCurrentDay;
+
+	/**
 	 * @param context context.
 	 * @param monthCalendar current month.
 	 */
-	public CalendarAdapter(Context context, Calendar monthCalendar) {
+	protected CalendarAdapter(Context context, Calendar monthCalendar) {
 		mToday = DateHelper.createCurrentBeginDayCalendar();
 		mCurrentMonth = (Calendar) monthCalendar.clone();
 		mContext = context;
 		mCurrentMonth.set(Calendar.DAY_OF_MONTH, 1);
 		refreshDays();
+	}
+
+	/**
+	 * @param currentDay day that was picked.
+	 */
+	public void setCurrentDay(Calendar currentDay) {
+		mCurrentDay = currentDay;
 	}
 
 	/**
@@ -71,7 +83,7 @@ public class CalendarAdapter extends BaseAdapter {
 		View currentView = convertView;
 		TextView dayViewTextView;
 		DayCell dayCell = days[position];
-		if (convertView == null) { 
+		if (convertView == null) {
 			LayoutInflater vi = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			currentView = vi.inflate(R.layout.calendar_item, null);
 		}
@@ -91,8 +103,11 @@ public class CalendarAdapter extends BaseAdapter {
 			}
 		}
 
+		// choosing background
 		if (mToday.equals(dayCell.mDate)) {
 			currentView.setBackgroundResource(R.drawable.calendar_item_background_today);
+		} else if (mCurrentDay != null && DateHelper.equalsIgnoreTime(mCurrentDay.getTime(), dayCell.mDate.getTime())) {
+			currentView.setBackgroundResource(R.drawable.calendar_item_background_current);
 		} else {
 			if (isCurrentMonth) {
 				currentView.setBackgroundResource(R.drawable.list_item_background);

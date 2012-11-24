@@ -6,6 +6,7 @@ import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 /**
  * A simple dialog containing an {@link android.widget.DatePicker}.
@@ -54,7 +55,7 @@ public class CalendarDatePickerDialog extends AlertDialog implements OnDateChang
 		super(context);
 
 		mCalendarMonthView = new CalendarView(context);
-
+		mCalendarMonthView.setCurrentDay(DateHelper.createCalendar(year, monthOfYear, dayOfMonth, TimeZone.getDefault().getID()));
 		setView(mCalendarMonthView);
 
 		mCallBack = callBack;
@@ -65,8 +66,6 @@ public class CalendarDatePickerDialog extends AlertDialog implements OnDateChang
 
 		setButton2(context.getText(R.string.cancel), (OnClickListener) null);
 		mCalendarMonthView.registerCalendarDatePickObserver(new CalendarDatePick() {
-
-			@Override
 			public void onDatePicked(CalendarAdapter.DayCell dayCell) {
 				Calendar picked = dayCell.getDate();
 				mCallBack.onDateSet(mCalendarMonthView, picked.get(Calendar.YEAR), picked.get(Calendar.MONTH), picked.get(Calendar.DAY_OF_MONTH));

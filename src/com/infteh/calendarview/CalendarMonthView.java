@@ -61,15 +61,19 @@ public class CalendarMonthView extends LinearLayout {
 		mContext = context;
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.calendar, this, true);
+	}
 
+	@Override
+	protected void onFinishInflate() {
+		super.onFinishInflate();
 		mInitialMonth = Calendar.getInstance();
 
-		mDaysAdapter = new CalendarAdapter(context, mInitialMonth);
+		mDaysAdapter = new CalendarAdapter(mContext, mInitialMonth);
 
 		GridView gridview = (GridView) findViewById(R.id.calendar_days_gridview);
 		gridview.setAdapter(mDaysAdapter);
 
-		initDayCaptions(context);
+		initDayCaptions(mContext);
 		initMonthCaption();
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -81,7 +85,17 @@ public class CalendarMonthView extends LinearLayout {
 			}
 		});
 	}
-
+	
+	/**
+	 * set current.
+	 * @param month month.
+	 */
+	public final void setCurrentDay(Calendar currentDay) {
+		//mInitialMonth = month;
+		mDaysAdapter.setCurrentDay(currentDay);
+		refreshCalendar();
+	}
+	
 	/**
 	 * set current.
 	 * @param month month.
@@ -105,8 +119,6 @@ public class CalendarMonthView extends LinearLayout {
 	private void initMonthCaption() {
 
 		TextView title = (TextView) findViewById(R.id.title);
-		// title.setText(android.text.format.DateFormat.format("MMMM yyyy",
-		// mInitialMonth));
 		String month;
 		if (LocaleHelper.isRussianLocale(mContext)) {
 			String[] months = mContext.getResources().getStringArray(R.array.months_long);

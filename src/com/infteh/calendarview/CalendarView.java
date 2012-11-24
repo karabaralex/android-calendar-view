@@ -44,6 +44,7 @@ public class CalendarView extends LinearLayout {
 		super(context, attrs);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.calendar_view, this, true);
+		//FIXME Вообще, искать сразу нельзя. Может быть null. Нужно искать в onFinishInflate.
 		pager = ((ViewPager) findViewById(R.id.calendar_view_pager));
 		adapter = new MonthPagerAdapter(inflater, pager);
 		pager.setAdapter(adapter);
@@ -60,7 +61,15 @@ public class CalendarView extends LinearLayout {
 	}
 	
 	/**
-	 * set current.
+	 * set current day.
+	 * @param month month.
+	 */
+	public final void setCurrentDay(Calendar currentDay) {
+		adapter.setCurrentDay(currentDay);
+	}
+	
+	/**
+	 * set current month.
 	 * @param month month.
 	 */
 	public final void setMonth(Calendar month) {

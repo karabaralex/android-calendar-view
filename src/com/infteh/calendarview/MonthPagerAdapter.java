@@ -15,7 +15,7 @@ import android.view.View;
  * @author Sazonov-adm
  * 
  */
-public class MonthPagerAdapter extends PagerAdapter {
+class MonthPagerAdapter extends PagerAdapter {
 
 	/**
 	 * max number of screens. 998 cause (998 mod 3) == 1
@@ -45,7 +45,7 @@ public class MonthPagerAdapter extends PagerAdapter {
 		CalendarMonthView view1 = (CalendarMonthView) getView(inflater);
 		CalendarMonthView view2 = (CalendarMonthView) getView(inflater);
 		CalendarMonthView view3 = (CalendarMonthView) getView(inflater);
-
+		
 		cal1.add(Calendar.MONTH, -1);
 		cal2.add(Calendar.MONTH, 0);
 		cal3.add(Calendar.MONTH, 1);
@@ -56,6 +56,23 @@ public class MonthPagerAdapter extends PagerAdapter {
 		this.pages.add(view1);
 		this.pages.add(view2);
 		this.pages.add(view3);
+	}
+	
+	/**
+	 * @param currentDay current day.
+	 */
+	public void setCurrentDay(Calendar currentDay) {
+		if (mPager == null) {
+			return;
+		}
+		int pagerPosition = mPager.getCurrentItem();
+		CalendarMonthView view1 = (CalendarMonthView) pages.get((pagerPosition - 1) % pages.size());
+		CalendarMonthView view2 = (CalendarMonthView) pages.get(pagerPosition % pages.size());
+		CalendarMonthView view3 = (CalendarMonthView) pages.get((pagerPosition + 1) % pages.size());
+
+		view1.setCurrentDay(currentDay);
+		view2.setCurrentDay(currentDay);
+		view3.setCurrentDay(currentDay);
 	}
 	
 	/**

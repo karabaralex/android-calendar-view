@@ -7,7 +7,7 @@ import android.content.Context;
  * @author Sazonov-adm
  *
  */
-public class LocaleHelper {
+class LocaleHelper {
 	/**
 	 * is current locale - russian.
 	 * @param context context.

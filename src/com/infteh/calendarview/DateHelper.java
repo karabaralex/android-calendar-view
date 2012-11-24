@@ -8,33 +8,33 @@ import java.util.TimeZone;
 import android.text.format.DateUtils;
 
 /**
- * Класс для работы с экземплярами класса Date.
+ * РљР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ СЌРєР·РµРјРїР»СЏСЂР°РјРё РєР»Р°СЃСЃР° Date.
  */
-public final class DateHelper {
+final class DateHelper {
 	/**
-	 * Временная зона UTC.
+	 * Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР° UTC.
 	 */
 	public static final String UTC_TIME_ZONE = "UTC";
 
 	/**
-	 * 1900 год.
+	 * 1900 РіРѕРґ.
 	 */
 	public static final int YEAR1900 = 1900;
 
 	/**
-	 * Конструктор.
+	 * РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
 	 */
 	private DateHelper() {
 	}
 
 	/**
-	 * Создание инициированного экземпляра класса Date (локальная зона).
-	 * @param year год.
-	 * @param month месяц (необходимо использовать константы класса Calendar).
-	 * @param day день.
-	 * @param hour час.
-	 * @param minute минута.
-	 * @return инициированный экземпляр класса Date.
+	 * РЎРѕР·РґР°РЅРёРµ РёРЅРёС†РёРёСЂРѕРІР°РЅРЅРѕРіРѕ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР° Date (Р»РѕРєР°Р»СЊРЅР°СЏ Р·РѕРЅР°).
+	 * @param year РіРѕРґ.
+	 * @param month РјРµСЃСЏС† (РЅРµРѕР±С…РѕРґРёРјРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРЅСЃС‚Р°РЅС‚С‹ РєР»Р°СЃСЃР° Calendar).
+	 * @param day РґРµРЅСЊ.
+	 * @param hour С‡Р°СЃ.
+	 * @param minute РјРёРЅСѓС‚Р°.
+	 * @return РёРЅРёС†РёРёСЂРѕРІР°РЅРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° Date.
 	 */
 	public static Date createDate(final int year, final int month, final int day, final int hour, final int minute) {
 
@@ -43,54 +43,54 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Создание инициированного экземпляра класса Date (локальная зона).
-	 * @param year год.
-	 * @param month месяц (необходимо использовать константы класса Calendar).
-	 * @param day день.
-	 * @return инициированный экземпляр класса Date.
+	 * РЎРѕР·РґР°РЅРёРµ РёРЅРёС†РёРёСЂРѕРІР°РЅРЅРѕРіРѕ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР° Date (Р»РѕРєР°Р»СЊРЅР°СЏ Р·РѕРЅР°).
+	 * @param year РіРѕРґ.
+	 * @param month РјРµСЃСЏС† (РЅРµРѕР±С…РѕРґРёРјРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРЅСЃС‚Р°РЅС‚С‹ РєР»Р°СЃСЃР° Calendar).
+	 * @param day РґРµРЅСЊ.
+	 * @return РёРЅРёС†РёРёСЂРѕРІР°РЅРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° Date.
 	 */
 	public static Date createDate(final int year, final int month, final int day) {
 		return createDate(year, month, day, 0, 0);
 	}
 
 	/**
-	 * Создание инициированного экземпляра класса Date с временем, установленным
-	 * в начало суток (зона GMT).
-	 * @param year год.
-	 * @param month месяц (необходимо использовать константы класса Calendar).
-	 * @param day день.
-	 * @return инициированный экземпляр класса Date.
+	 * РЎРѕР·РґР°РЅРёРµ РёРЅРёС†РёРёСЂРѕРІР°РЅРЅРѕРіРѕ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР° Date СЃ РІСЂРµРјРµРЅРµРј, СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Рј
+	 * РІ РЅР°С‡Р°Р»Рѕ СЃСѓС‚РѕРє (Р·РѕРЅР° GMT).
+	 * @param year РіРѕРґ.
+	 * @param month РјРµСЃСЏС† (РЅРµРѕР±С…РѕРґРёРјРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРЅСЃС‚Р°РЅС‚С‹ РєР»Р°СЃСЃР° Calendar).
+	 * @param day РґРµРЅСЊ.
+	 * @return РёРЅРёС†РёРёСЂРѕРІР°РЅРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° Date.
 	 */
 	public static Date createDateGMT(final int year, final int month, final int day) {
 		return convertToUTC(DateHelper.createDate(year, month, day, 0, 0));
 	}
 
 	/**
-	 * Сравнение двух дат с учётом времени.
-	 * @param date1 первая дата.
-	 * @param date2 вторая дата.
-	 * @return true, если первая дата больше или равна второй.
+	 * РЎСЂР°РІРЅРµРЅРёРµ РґРІСѓС… РґР°С‚ СЃ СѓС‡С‘С‚РѕРј РІСЂРµРјРµРЅРё.
+	 * @param date1 РїРµСЂРІР°СЏ РґР°С‚Р°.
+	 * @param date2 РІС‚РѕСЂР°СЏ РґР°С‚Р°.
+	 * @return true, РµСЃР»Рё РїРµСЂРІР°СЏ РґР°С‚Р° Р±РѕР»СЊС€Рµ РёР»Рё СЂР°РІРЅР° РІС‚РѕСЂРѕР№.
 	 */
 	public static boolean dateMoreOrEqual(final Date date1, final Date date2) {
 		return date1.compareTo(date2) >= 0;
 	}
 
 	/**
-	 * Сравнение двух дат с учётом времени.
-	 * @param date1 первая дата.
-	 * @param date2 вторая дата.
-	 * @return true, если первая дата меньше второй.
+	 * РЎСЂР°РІРЅРµРЅРёРµ РґРІСѓС… РґР°С‚ СЃ СѓС‡С‘С‚РѕРј РІСЂРµРјРµРЅРё.
+	 * @param date1 РїРµСЂРІР°СЏ РґР°С‚Р°.
+	 * @param date2 РІС‚РѕСЂР°СЏ РґР°С‚Р°.
+	 * @return true, РµСЃР»Рё РїРµСЂРІР°СЏ РґР°С‚Р° РјРµРЅСЊС€Рµ РІС‚РѕСЂРѕР№.
 	 */
 	public static boolean dateLess(final Date date1, final Date date2) {
 		return date1.compareTo(date2) < 0;
 	}
 
 	/**
-	 * Изменяет значение даты.
-	 * @param date исходное значение.
-	 * @param field изменяемое поле (см. константы класса Calendar).
-	 * @param value на сколько изменить значение.
-	 * @return новое значение даты.
+	 * Р�Р·РјРµРЅСЏРµС‚ Р·РЅР°С‡РµРЅРёРµ РґР°С‚С‹.
+	 * @param date РёСЃС…РѕРґРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ.
+	 * @param field РёР·РјРµРЅСЏРµРјРѕРµ РїРѕР»Рµ (СЃРј. РєРѕРЅСЃС‚Р°РЅС‚С‹ РєР»Р°СЃСЃР° Calendar).
+	 * @param value РЅР° СЃРєРѕР»СЊРєРѕ РёР·РјРµРЅРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ.
+	 * @return РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР°С‚С‹.
 	 */
 	public static Date add(final Date date, final int field, final int value) {
 		GregorianCalendar calendar = new GregorianCalendar();
@@ -100,9 +100,9 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Приводит дату с временем к дате с временем, соответствующим началу суток.
-	 * @param date Дата с временем.
-	 * @return дата с временем на начало суток.
+	 * РџСЂРёРІРѕРґРёС‚ РґР°С‚Сѓ СЃ РІСЂРµРјРµРЅРµРј Рє РґР°С‚Рµ СЃ РІСЂРµРјРµРЅРµРј, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРј РЅР°С‡Р°Р»Сѓ СЃСѓС‚РѕРє.
+	 * @param date Р”Р°С‚Р° СЃ РІСЂРµРјРµРЅРµРј.
+	 * @return РґР°С‚Р° СЃ РІСЂРµРјРµРЅРµРј РЅР° РЅР°С‡Р°Р»Рѕ СЃСѓС‚РѕРє.
 	 */
 	public static Date clearTime(final Date date) {
 		GregorianCalendar calendar = new GregorianCalendar();
@@ -115,10 +115,10 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Сравнение на равенство двух дат, без учёта составляющих времени.
-	 * @param date1 первая дата.
-	 * @param date2 вторая дата.
-	 * @return true, если даты равны.
+	 * РЎСЂР°РІРЅРµРЅРёРµ РЅР° СЂР°РІРµРЅСЃС‚РІРѕ РґРІСѓС… РґР°С‚, Р±РµР· СѓС‡С‘С‚Р° СЃРѕСЃС‚Р°РІР»СЏСЋС‰РёС… РІСЂРµРјРµРЅРё.
+	 * @param date1 РїРµСЂРІР°СЏ РґР°С‚Р°.
+	 * @param date2 РІС‚РѕСЂР°СЏ РґР°С‚Р°.
+	 * @return true, РµСЃР»Рё РґР°С‚С‹ СЂР°РІРЅС‹.
 	 */
 	public static boolean equalsIgnoreTime(final Date date1, final Date date2) {
 		Date clearedDate1 = DateHelper.clearTime(date1);
@@ -127,12 +127,12 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Заменить дату.
-	 * @param sourceDate Исходная дата/время.
-	 * @param year Год.
-	 * @param monthOfYear Месяц.
-	 * @param dayOfMonth День месяца.
-	 * @return Новая дата.
+	 * Р—Р°РјРµРЅРёС‚СЊ РґР°С‚Сѓ.
+	 * @param sourceDate Р�СЃС…РѕРґРЅР°СЏ РґР°С‚Р°/РІСЂРµРјСЏ.
+	 * @param year Р“РѕРґ.
+	 * @param monthOfYear РњРµСЃСЏС†.
+	 * @param dayOfMonth Р”РµРЅСЊ РјРµСЃСЏС†Р°.
+	 * @return РќРѕРІР°СЏ РґР°С‚Р°.
 	 */
 	public static Date replaceDate(final Date sourceDate, final int year, final int monthOfYear, final int dayOfMonth) {
 		java.util.Calendar calendar = GregorianCalendar.getInstance();
@@ -146,11 +146,11 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Заменить дату в календаре.
-	 * @param calendar Календарь.
-	 * @param year Год.
-	 * @param monthOfYear Месяц.
-	 * @param dayOfMonth День месяца.
+	 * Р—Р°РјРµРЅРёС‚СЊ РґР°С‚Сѓ РІ РєР°Р»РµРЅРґР°СЂРµ.
+	 * @param calendar РљР°Р»РµРЅРґР°СЂСЊ.
+	 * @param year Р“РѕРґ.
+	 * @param monthOfYear РњРµСЃСЏС†.
+	 * @param dayOfMonth Р”РµРЅСЊ РјРµСЃСЏС†Р°.
 	 */
 	public static void changeDate(final java.util.Calendar calendar, final int year, final int monthOfYear, final int dayOfMonth) {
 		calendar.set(GregorianCalendar.YEAR, year);
@@ -159,12 +159,12 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Заменить время.
-	 * @param sourceDate Исходная дата/время.
-	 * @param hourOfDay Час.
-	 * @param minute Минута.
-	 * @param second Секунда.
-	 * @return Новая дата.
+	 * Р—Р°РјРµРЅРёС‚СЊ РІСЂРµРјСЏ.
+	 * @param sourceDate Р�СЃС…РѕРґРЅР°СЏ РґР°С‚Р°/РІСЂРµРјСЏ.
+	 * @param hourOfDay Р§Р°СЃ.
+	 * @param minute РњРёРЅСѓС‚Р°.
+	 * @param second РЎРµРєСѓРЅРґР°.
+	 * @return РќРѕРІР°СЏ РґР°С‚Р°.
 	 */
 	public static Date replaceTime(final Date sourceDate, final int hourOfDay, final int minute, final int second) {
 		java.util.Calendar calendar = GregorianCalendar.getInstance();
@@ -178,11 +178,11 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Заменить время.
-	 * @param calendar Календарь.
-	 * @param hourOfDay Час.
-	 * @param minute Минута.
-	 * @param second Секунда.
+	 * Р—Р°РјРµРЅРёС‚СЊ РІСЂРµРјСЏ.
+	 * @param calendar РљР°Р»РµРЅРґР°СЂСЊ.
+	 * @param hourOfDay Р§Р°СЃ.
+	 * @param minute РњРёРЅСѓС‚Р°.
+	 * @param second РЎРµРєСѓРЅРґР°.
 	 */
 	public static void changeTime(final java.util.Calendar calendar, final int hourOfDay, final int minute, final int second) {
 		calendar.set(GregorianCalendar.HOUR_OF_DAY, hourOfDay);
@@ -191,9 +191,9 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Преобразовать из гугловского типа даты в явовский.
-	 * @param date дата
-	 * @return дата в ява формате
+	 * РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РёР· РіСѓРіР»РѕРІСЃРєРѕРіРѕ С‚РёРїР° РґР°С‚С‹ РІ СЏРІРѕРІСЃРєРёР№.
+	 * @param date РґР°С‚Р°
+	 * @return РґР°С‚Р° РІ СЏРІР° С„РѕСЂРјР°С‚Рµ
 	 */
 	public static GregorianCalendar fromDateToCalendar(final Date date) {
 		GregorianCalendar calendar = new GregorianCalendar(0, 0, 0, 0, 0);
@@ -202,10 +202,10 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Форматировать дату.
-	 * @param format Формат даты (стандартный, от SimpleDateFormat).
-	 * @param date дата.
-	 * @return Результат.
+	 * Р¤РѕСЂРјР°С‚РёСЂРѕРІР°С‚СЊ РґР°С‚Сѓ.
+	 * @param format Р¤РѕСЂРјР°С‚ РґР°С‚С‹ (СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№, РѕС‚ SimpleDateFormat).
+	 * @param date РґР°С‚Р°.
+	 * @return Р РµР·СѓР»СЊС‚Р°С‚.
 	 */
 	public static String dateFormat(final String format, final Date date) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);
@@ -213,10 +213,10 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Преобразовать дату в дату по гринвичу. Например, 01.04.2012 00:00:00
+	 * РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РґР°С‚Сѓ РІ РґР°С‚Сѓ РїРѕ РіСЂРёРЅРІРёС‡Сѓ. РќР°РїСЂРёРјРµСЂ, 01.04.2012 00:00:00
 	 * GMT+04:00 -> 01.04.2012 00:00:00 GMT.
-	 * @param date Дата, которую необходимо преобразовать.
-	 * @return Дата по гринвическому времени.
+	 * @param date Р”Р°С‚Р°, РєРѕС‚РѕСЂСѓСЋ РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ.
+	 * @return Р”Р°С‚Р° РїРѕ РіСЂРёРЅРІРёС‡РµСЃРєРѕРјСѓ РІСЂРµРјРµРЅРё.
 	 */
 	public static Date convertToUTC(final Date date) {
 		GregorianCalendar calendar = new GregorianCalendar(date.getYear() + YEAR1900, date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(),
@@ -227,9 +227,9 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Изменить значение календаря на начало суток и изменить временную зону
+	 * Р�Р·РјРµРЅРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РєР°Р»РµРЅРґР°СЂСЏ РЅР° РЅР°С‡Р°Р»Рѕ СЃСѓС‚РѕРє Рё РёР·РјРµРЅРёС‚СЊ РІСЂРµРјРµРЅРЅСѓСЋ Р·РѕРЅСѓ
 	 * UTC.
-	 * @param calendar Календарь.
+	 * @param calendar РљР°Р»РµРЅРґР°СЂСЊ.
 	 */
 	public static void changeToBeginDayUTC(final java.util.Calendar calendar) {
 		int year = calendar.get(GregorianCalendar.YEAR);
@@ -247,11 +247,11 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Установить в календаре указанное время и часовой пояс.
-	 * @param calendar Каледарь.
-	 * @param hours Часы.
-	 * @param minutes Минуты.
-	 * @param timeZone Временная зона.
+	 * РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РІ РєР°Р»РµРЅРґР°СЂРµ СѓРєР°Р·Р°РЅРЅРѕРµ РІСЂРµРјСЏ Рё С‡Р°СЃРѕРІРѕР№ РїРѕСЏСЃ.
+	 * @param calendar РљР°Р»РµРґР°СЂСЊ.
+	 * @param hours Р§Р°СЃС‹.
+	 * @param minutes РњРёРЅСѓС‚С‹.
+	 * @param timeZone Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР°.
 	 */
 	public static void changeTimeAndTimeZone(final java.util.Calendar calendar, final int hours, final int minutes, final String timeZone) {
 		int year = calendar.get(GregorianCalendar.YEAR);
@@ -267,9 +267,9 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Преобразование из гринвича в текущее время.
-	 * @param dateGMT Дата в GMT.
-	 * @return дата в локальной зоне.
+	 * РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РёР· РіСЂРёРЅРІРёС‡Р° РІ С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ.
+	 * @param dateGMT Р”Р°С‚Р° РІ GMT.
+	 * @return РґР°С‚Р° РІ Р»РѕРєР°Р»СЊРЅРѕР№ Р·РѕРЅРµ.
 	 */
 	public static Date convertToCurrentTimeZone(final Date dateGMT) {
 		long date = dateGMT.getTime() + dateGMT.getTimezoneOffset() * DateUtils.MINUTE_IN_MILLIS;
@@ -287,12 +287,12 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Создать календарь.
-	 * @param year Год.
-	 * @param month Месяц.
-	 * @param day День.
-	 * @param timezone Временная зона.
-	 * @return календарь.
+	 * РЎРѕР·РґР°С‚СЊ РєР°Р»РµРЅРґР°СЂСЊ.
+	 * @param year Р“РѕРґ.
+	 * @param month РњРµСЃСЏС†.
+	 * @param day Р”РµРЅСЊ.
+	 * @param timezone Р’СЂРµРјРµРЅРЅР°СЏ Р·РѕРЅР°.
+	 * @return РєР°Р»РµРЅРґР°СЂСЊ.
 	 */
 	public static Calendar createCalendar(final int year, final int month, final int day, final String timezone) {
 		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(timezone));
@@ -309,8 +309,8 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Создать календарь.
-	 * @return календарь.
+	 * РЎРѕР·РґР°С‚СЊ РєР°Р»РµРЅРґР°СЂСЊ.
+	 * @return РєР°Р»РµРЅРґР°СЂСЊ.
 	 */
 	public static Calendar createCurrentBeginDayCalendar() {
 		Calendar calendar = new GregorianCalendar();
@@ -323,14 +323,14 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Создать календарь.
-	 * @param year Год.
-	 * @param month Месяц.
-	 * @param day День.
-	 * @param hour час.
-	 * @param minute минута.
-	 * @param timezone зона.
-	 * @return календарь.
+	 * РЎРѕР·РґР°С‚СЊ РєР°Р»РµРЅРґР°СЂСЊ.
+	 * @param year Р“РѕРґ.
+	 * @param month РњРµСЃСЏС†.
+	 * @param day Р”РµРЅСЊ.
+	 * @param hour С‡Р°СЃ.
+	 * @param minute РјРёРЅСѓС‚Р°.
+	 * @param timezone Р·РѕРЅР°.
+	 * @return РєР°Р»РµРЅРґР°СЂСЊ.
 	 */
 	public static Calendar createCalendar(final int year, final int month, final int day, final int hour, final int minute, final String timezone) {
 		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(timezone));
@@ -386,9 +386,9 @@ public final class DateHelper {
 	}
 
 	/**
-	 * Создать текущие сутки в UTC timezone. Берётся текущая дата из таймзоны по
-	 * умолчанию, и делается такая же дата, но в UTC.
-	 * @return текущие сутки в UTC timezone.
+	 * РЎРѕР·РґР°С‚СЊ С‚РµРєСѓС‰РёРµ СЃСѓС‚РєРё РІ UTC timezone. Р‘РµСЂС‘С‚СЃСЏ С‚РµРєСѓС‰Р°СЏ РґР°С‚Р° РёР· С‚Р°Р№РјР·РѕРЅС‹ РїРѕ
+	 * СѓРјРѕР»С‡Р°РЅРёСЋ, Рё РґРµР»Р°РµС‚СЃСЏ С‚Р°РєР°СЏ Р¶Рµ РґР°С‚Р°, РЅРѕ РІ UTC.
+	 * @return С‚РµРєСѓС‰РёРµ СЃСѓС‚РєРё РІ UTC timezone.
 	 */
 	public static Calendar createCurrentBeginDayInUTC() {
 		Calendar now = new GregorianCalendar();
